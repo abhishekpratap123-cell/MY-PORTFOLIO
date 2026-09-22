@@ -134,17 +134,17 @@ export default function App() {
         </div>
       </div>
 
-      {/* Hero Section with Local Profile Photo */}
+      {/* Hero Section with Prominent Profile Photo */}
       <section id="home" className="min-h-screen pt-40 px-6 md:px-12 max-w-7xl mx-auto flex flex-col justify-between relative overflow-hidden">
         
-        {/* Background Photo Overlay */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
+        {/* Background Photo Overlay with Higher Visibility */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-50 pointer-events-none">
           <img 
             src="/profile.jpg" 
             alt="Abhishek Pratap" 
-            className="w-full h-full object-cover grayscale contrast-125 mix-blend-luminosity" 
+            className="w-full h-full object-cover contrast-125 mix-blend-luminosity" 
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-[#080808]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-[#080808]" />
         </div>
 
         <div className="text-center my-auto relative z-10">
@@ -156,7 +156,7 @@ export default function App() {
             ABHISHEK
           </h1>
 
-          <p className="max-w-xl mx-auto text-slate-300 text-sm md:text-base font-sans mt-8 leading-relaxed bg-black/50 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
+          <p className="max-w-xl mx-auto text-slate-300 text-sm md:text-base font-sans mt-8 leading-relaxed bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-2xl">
             BCA student & web developer engineering clean, responsive, and visual web applications using HTML, CSS, JavaScript, React, and C++.
           </p>
 
@@ -353,7 +353,7 @@ export default function App() {
             <h3 className="text-lg font-bold font-sans text-white">Contact Details</h3>
             
             <div className="space-y-4 text-slate-300">
-              <div>📧 abhishekpratap123.cell@gmail.com</div>
+              <div>📧 abhipratap827@gmail.com</div>
               <div>📍 India</div>
               <div className="text-red-400">⚡ Status: Open to opportunities</div>
             </div>
