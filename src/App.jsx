@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Send, X, Menu, ArrowUpRight, Code2, Globe, Github, 
-  Linkedin, Mail, MapPin, Sparkles, User, Terminal
-} from 'lucide-react';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -99,14 +95,14 @@ export default function App() {
             onClick={() => setIsBioOpen(true)}
             className="hidden md:flex items-center gap-2 text-xs font-mono bg-white/5 border border-white/10 px-4 py-2 rounded-full hover:bg-red-600 transition duration-300"
           >
-            <User size={14} /> Profile Bio
+            Profile Bio
           </button>
           
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="bg-white/10 hover:bg-red-600 text-white font-mono text-xs px-5 py-2.5 rounded-full border border-white/10 transition duration-300 flex items-center gap-2"
+            className="bg-white/10 hover:bg-red-600 text-white font-mono text-xs px-5 py-2.5 rounded-full border border-white/10 transition duration-300"
           >
-            MENU {isMenuOpen ? <X size={14} /> : <Menu size={14} />}
+            MENU {isMenuOpen ? '✕' : '☰'}
           </button>
         </div>
       </nav>
@@ -123,8 +119,8 @@ export default function App() {
           >
             <div className="flex justify-between items-center">
               <span className="font-mono text-xs text-red-500 uppercase tracking-widest">// NAVIGATION</span>
-              <button onClick={() => setIsMenuOpen(false)} className="p-2 hover:bg-white/10 rounded-full">
-                <X size={20} />
+              <button onClick={() => setIsMenuOpen(false)} className="p-2 hover:bg-white/10 rounded-full text-lg">
+                ✕
               </button>
             </div>
 
@@ -167,9 +163,9 @@ export default function App() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4 font-mono text-xs">
             <a 
               href="#projects" 
-              className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-full transition duration-300 shadow-xl shadow-red-600/25 flex items-center gap-2"
+              className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-3.5 rounded-full transition duration-300 shadow-xl shadow-red-600/25"
             >
-              Explore Work <ArrowUpRight size={16} />
+              Explore Work ↗
             </a>
             <button 
               onClick={() => setIsBioOpen(true)}
@@ -200,7 +196,7 @@ export default function App() {
                 onClick={() => setIsBioOpen(false)}
                 className="absolute top-6 right-6 text-slate-400 hover:text-white p-2 rounded-full bg-white/5"
               >
-                <X size={18} />
+                ✕
               </button>
 
               <div className="flex items-center gap-4 mb-6">
@@ -254,7 +250,6 @@ export default function App() {
 
           <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-r from-red-950/40 via-black to-red-950/40 p-10 md:p-16 my-8">
             <div className="max-w-3xl mx-auto">
-              <Sparkles className="w-10 h-10 text-red-500 mx-auto mb-6" />
               <p className="text-lg md:text-2xl font-light text-slate-200 leading-relaxed italic">
                 "I believe great software is born at the intersection of engineering precision and clean user-centric design. Every line of code is an opportunity to create something that provides real value."
               </p>
@@ -307,7 +302,7 @@ export default function App() {
                     rel="noreferrer"
                     className="flex items-center gap-1 text-slate-400 hover:text-white transition"
                   >
-                    <Code2 size={14} /> Code
+                    Code
                   </a>
                   <a 
                     href={proj.demo} 
@@ -315,7 +310,7 @@ export default function App() {
                     rel="noreferrer"
                     className="flex items-center gap-1 text-red-400 hover:text-red-300 transition font-bold ml-auto"
                   >
-                    Live Demo <ArrowUpRight size={14} />
+                    Live Demo ↗
                   </a>
                 </div>
               </div>
@@ -365,23 +360,14 @@ export default function App() {
             <h3 className="text-lg font-bold font-sans text-white">Contact Details</h3>
             
             <div className="space-y-4 text-slate-300">
-              <div className="flex items-center gap-3">
-                <Mail className="text-red-500" size={16} />
-                <span>abhishekpratap123.cell@gmail.com</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="text-red-500" size={16} />
-                <span>India</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Terminal className="text-red-500" size={16} />
-                <span className="text-red-400">Status: Open to opportunities</span>
-              </div>
+              <div>📧 abhishekpratap123.cell@gmail.com</div>
+              <div>📍 India</div>
+              <div className="text-red-400">⚡ Status: Open to opportunities</div>
             </div>
 
             <div className="pt-6 border-t border-white/10 flex gap-4">
               <a href="https://github.com/abhishekpratap123-cell" target="_blank" rel="noreferrer" className="p-3 bg-white/5 rounded-xl hover:bg-red-600 transition">
-                <Github size={18} />
+                GitHub ↗
               </a>
             </div>
           </div>
@@ -412,7 +398,7 @@ export default function App() {
               type="submit" 
               className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-4 rounded-2xl transition flex items-center justify-center gap-2 text-xs uppercase tracking-widest shadow-lg shadow-red-600/30"
             >
-              Send Message <Send size={14} />
+              Send Message ➔
             </button>
           </form>
         </div>
