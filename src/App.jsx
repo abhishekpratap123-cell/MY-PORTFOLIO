@@ -4,7 +4,7 @@
         {/* Background Image Behind Title */}
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-25 pointer-events-none">
           <img 
-            src="/hero.jpg" 
+            src="/https://ibb.co/CsN3Vpxn" 
             alt="Abhishek Pratap" 
             className="w-full h-full object-cover grayscale contrast-125 mix-blend-luminosity" 
           />
