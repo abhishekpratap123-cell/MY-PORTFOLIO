@@ -134,14 +134,14 @@ export default function App() {
         </div>
       </div>
 
-      {/* Hero Section with Embedded Background Photo */}
+      {/* Hero Section with Local Profile Photo */}
       <section id="home" className="min-h-screen pt-40 px-6 md:px-12 max-w-7xl mx-auto flex flex-col justify-between relative overflow-hidden">
         
-        {/* Background Photo Display Behind Typography */}
+        {/* Background Photo Overlay */}
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30 pointer-events-none">
           <img 
-            src="https://i.ibb.co/L5hYfT3/1000077793.png" 
-            alt="Abhishek Pratap Workspace" 
+            src="/profile.jpg" 
+            alt="Abhishek Pratap" 
             className="w-full h-full object-cover grayscale contrast-125 mix-blend-luminosity" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-[#080808]" />
