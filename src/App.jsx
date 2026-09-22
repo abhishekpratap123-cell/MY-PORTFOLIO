@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Send, X, Menu, ArrowUpRight, Code2, Globe, Github, 
-  Linkedin, Mail, MapPin, Sparkles, User, Terminal, Laptop
+  Linkedin, Mail, MapPin, Sparkles, User, Terminal
 } from 'lucide-react';
 
 export default function App() {
@@ -13,18 +13,17 @@ export default function App() {
 
   const formspreeEndpoint = "https://formspree.io/f/meaogrrl";
 
-  // Preloader Counter Animation (0 -> 100)
   useEffect(() => {
     const timer = setInterval(() => {
       setCounter((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => setLoading(false), 400);
+          setTimeout(() => setLoading(false), 300);
           return 100;
         }
         return prev + 2;
       });
-    }, 25);
+    }, 20);
     return () => clearInterval(timer);
   }, []);
 
@@ -73,13 +72,9 @@ export default function App() {
   if (loading) {
     return (
       <div className="fixed inset-0 z-50 bg-[#080808] flex flex-col items-center justify-center text-white font-mono">
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          className="text-8xl md:text-9xl font-black tracking-tighter"
-        >
+        <div className="text-8xl md:text-9xl font-black tracking-tighter">
           {counter}
-        </motion.div>
+        </div>
         <div className="mt-8 text-xs tracking-widest uppercase text-red-500 font-bold border-t border-white/10 pt-4 px-6">
           ABHISHEK PRATAP
         </div>
@@ -90,14 +85,13 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#080808] text-slate-100 font-sans relative selection:bg-red-600 selection:text-white overflow-x-hidden">
       
-      {/* Background Radial Red Glow */}
-      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-red-600/15 blur-[160px] pointer-events-none rounded-full" />
+      <div className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-red-600/15 blur-[150px] pointer-events-none rounded-full" />
 
-      {/* Header / Nav */}
+      {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-40 px-6 md:px-12 py-6 flex justify-between items-center backdrop-blur-md bg-[#080808]/60 border-b border-white/5">
         <a href="#home" className="text-xs font-mono tracking-widest text-slate-300 uppercase flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-red-600 inline-block animate-pulse" />
-          SHAPING IDEAS INTO REALITY.
+          SHAPING IDEAS INTO REALITY
         </a>
 
         <div className="flex items-center gap-4">
@@ -117,15 +111,15 @@ export default function App() {
         </div>
       </nav>
 
-      {/* Side Slide Menu Drawer */}
+      {/* Drawer Menu */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'tween', duration: 0.4 }}
-            className="fixed inset-y-0 right-0 z-50 w-full md:w-[400px] bg-[#0d0d0d] border-l border-white/10 p-10 flex flex-col justify-between"
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed inset-y-0 right-0 z-50 w-full md:w-[380px] bg-[#0d0d0d] border-l border-white/10 p-10 flex flex-col justify-between"
           >
             <div className="flex justify-between items-center">
               <span className="font-mono text-xs text-red-500 uppercase tracking-widest">// NAVIGATION</span>
@@ -158,24 +152,13 @@ export default function App() {
       {/* Hero Section */}
       <section id="home" className="min-h-screen pt-40 px-6 md:px-12 max-w-7xl mx-auto flex flex-col justify-between relative">
         <div className="text-center my-auto">
-          {/* Tagline */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block border border-red-600/40 bg-red-600/10 text-red-400 font-mono text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-8"
-          >
+          <div className="inline-block border border-red-600/40 bg-red-600/10 text-red-400 font-mono text-xs px-4 py-1.5 rounded-full uppercase tracking-widest mb-8">
             CRAFTING DIGITAL EXPERIENCES THAT ENGAGE
-          </motion.div>
+          </div>
 
-          {/* Giant Typography (Video Inspired) */}
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="text-7xl sm:text-9xl md:text-[14rem] font-black uppercase tracking-tighter leading-none select-none text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-600"
-          >
+          <h1 className="text-7xl sm:text-9xl md:text-[13rem] font-black uppercase tracking-tighter leading-none select-none text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-600">
             ABHISHEK
-          </motion.h1>
+          </h1>
 
           <p className="max-w-xl mx-auto text-slate-400 text-sm md:text-base font-sans mt-8 leading-relaxed">
             Final year BCA student & web developer engineering clean, responsive, and visual web applications using HTML, CSS, JavaScript, React, and C++.
@@ -208,9 +191,9 @@ export default function App() {
         {isBioOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
+              exit={{ opacity: 0, scale: 0.95 }}
               className="bg-[#111111] border border-red-600/40 rounded-3xl max-w-lg w-full p-8 relative shadow-2xl"
             >
               <button 
@@ -261,7 +244,7 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* The Philosophy Section (Video Inspired Hands / Art Banner) */}
+      {/* Philosophy */}
       <section id="philosophy" className="py-28 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/10">
         <div className="text-center">
           <span className="font-mono text-xs text-red-500 uppercase tracking-widest">// THE PHILOSOPHY</span>
@@ -280,7 +263,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Selected Projects Grid */}
+      {/* Projects */}
       <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-white/10">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
           <div>
@@ -296,9 +279,8 @@ export default function App() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {projects.map((proj, idx) => (
-            <motion.div 
+            <div 
               key={idx}
-              whileHover={{ y: -10 }}
               className="bg-[#0f0f0f] border border-white/10 rounded-3xl p-8 hover:border-red-600/50 transition duration-300 flex flex-col justify-between group"
             >
               <div>
@@ -337,12 +319,12 @@ export default function App() {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* Experience / Timeline Section */}
+      {/* Experience */}
       <section id="experience" className="py-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-white/10">
         <span className="font-mono text-xs text-red-500 uppercase tracking-widest">// JOURNEY</span>
         <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight mt-2 mb-16">
@@ -368,7 +350,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact */}
       <section id="contact" className="py-28 px-6 md:px-12 max-w-6xl mx-auto border-t border-white/10">
         <div className="text-center mb-16">
           <span className="font-mono text-xs text-red-500 uppercase tracking-widest">// GET IN TOUCH</span>
